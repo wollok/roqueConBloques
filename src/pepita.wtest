@@ -1,0 +1,57 @@
+import pepita.*
+
+test "pepita volar" {
+	pepita.volar(5)
+	assert.equals(85, pepita.energia())
+	pepita.volar(15)
+	assert.equals(60, pepita.energia())
+}
+
+test "pepita comer" {
+	pepita.comer(10)
+	assert.equals(140, pepita.energia())
+	pepita.comer(5)
+	assert.equals(160, pepita.energia())
+}
+
+test "pepita feliz" {
+	assert.notThat(pepita.feliz())
+	pepita.comer(150)
+	assert.that(pepita.feliz())
+}
+test "pepita debil" {
+	assert.notThat(pepita.debil())
+	pepita.volar(50)
+	assert.that(pepita.debil())
+}
+test "hace lo que quieras" {
+	pepita.comer(60)
+	assert.equals(340, pepita.energia())
+	assert.equals(93, pepita.cuantoQuiereVolar())
+}
+
+test "integral" {
+	pepita.comer(100)
+	pepita.volar(10)
+	pepita.volar(20)
+	pepita.energia()
+	assert.equals(450, pepita.energia())
+}
+
+test "roque" {
+	roque.ave(pepita)
+	roque.entrenar()	
+	assert.equals(1265, pepita.energia())	
+}
+
+test "roque cambia su rutina" {
+	roque.ave(pepita)
+	roque.rutina({_ave => 
+			_ave.comer(100) 
+			_ave.volar(10)
+	})
+	roque.entrenar()
+	assert.equals(480, pepita.energia())		
+}
+
+
