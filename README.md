@@ -1,4 +1,7 @@
 
+ 
+[![Build Status](https://travis-ci.org/wollok/roqueConBloques.svg?branch=master)](https://travis-ci.org/wollok/roqueConBloques)
+
 1)
  Implementar un objeto que modele a Pepita, una golondrina de la que nos interesa
 saber qué energía tiene en cada momento, medida en joules. En el modelo sim-
